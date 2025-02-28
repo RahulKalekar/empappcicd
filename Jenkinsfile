@@ -38,8 +38,8 @@ pipeline {
         stage("Deploy Image to Hub"){
             steps{
                 withCredentials([string(credentialsId: 'dockerHubPassword', variable: 'docker')]) {
-                         bat 'docker login -u rahul471 -p ${docker}'
-                         bat 'docker push rahul471/empappcicd:1.1'
+                                    bat "echo ${docker} | docker login -u ${DOCKER_USER} --password-stdin"
+                                    bat 'docker push rahul471/empappcicd:1.1'
                 }
             }
         }
