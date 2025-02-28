@@ -16,7 +16,7 @@ pipeline {
     stages {
           stage("SCM checkout"){
             steps{
-                checkout scmGit(branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/rgupta00/empappcicd.git']])
+                checkout scmGit(branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/RahulKalekar/empappcicd.git']])
             }
         }
 
